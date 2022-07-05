@@ -12,15 +12,23 @@ int main() {
 
   // ここにプログラムを追記
   // (ここで"試合結果の表"の2次元配列を宣言)
-  vector<vector<string>> res(N, vector<int>(N, "-"));
+
+  // ターミナルを小さくし過ぎると結果出てこないので注意
+  vector<vector<char>> res(N, vector<char>(N, '-'));
   rep(i,M){
-    res.at(A.at(i)).at(B.at(i)) = "o";
-    res.at(A.at(i)).at(B.at(i)) = "x";
+    A.at(i)--; B.at(i)--;
+    res.at(A.at(i)).at(B.at(i)) = 'o';
+    res.at(B.at(i)).at(A.at(i)) = 'x';
   }
+
   rep(i,N){
     rep(j,N){
-        cout << res.at(i).at(j);
+      cout << res.at(i).at(j);
+      if (j == N - 1) {
+        cout << endl;
+      } else {
+        cout << ' ';
+      }
     }
-    cout << endl;
-    }
+  }
 }
