@@ -1,30 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
-#define rep_1(i, n) for (int i = 1; i < (int)(n+1); i++)
+#define rep_1(i, n) for (int i = 1; i <= (int)(n); i++)
 
-static const int MAX = 1e4;
+static const int MAX = 2200;
 
-// 自分の回答
-// int main() {
-//   int N, A;
-//   cin >> N >> A ;
-//   int res = 0;
+void selectMoney(int N, int Y){
+    int x,y,z,tmp;
+    x=y=z=-1;
+    rep(i,N+1){
+        for(int j = 0; j + i < N+1; ++j){
+                int tmp = N - i - j;
+                int judge = 10000 * i + 5000 * j + 1000 * tmp;
+                if(judge == Y){
+                   x = i;
+                   y = j;
+                   z = tmp; 
+                } 
+        }
+    }
+    cout << x << " " << y << " " << z << endl;
+}
 
-//   int x=-1,y=-1,z=-1;
-//   rep_1(i, N){
-//     rep_1(j,N){
-//       rep_1(k,N){
-//         if((10000*i) + (5000 * j) + (1000 * k) == A){
-//           if(i + j + k == N){
-//             swap(x,i);
-//             swap(y,j);
-//             swap(z,k);
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   cout << x << " " << y << " " << z << endl;
-// }
+int main() {
+    int N, Y;
+    cin >> N >> Y;
+    selectMoney(N,Y);
+}
