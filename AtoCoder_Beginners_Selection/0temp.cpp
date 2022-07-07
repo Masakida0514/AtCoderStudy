@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define rep_1(i, n) for (int i = 1; i <= (int)(n); i++)
 
 static const int MAX = 1e4;
-
 
 int main() {
   int N, A, B;
