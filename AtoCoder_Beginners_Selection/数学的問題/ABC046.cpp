@@ -11,6 +11,7 @@ int main() {
   cin >> N >> K;
   // 全体の確率-どれか一つはとなり合って塗る確率
   // ②　＝　K^(N - 1)
+  res = K*pow(K-1, N-1);
 
 
   cout << res << endl;
